@@ -1,0 +1,102 @@
+(create database query) :
+
+ create database stack;				
+----------------------------------------------------
+// (create table users)
+
+CREATE TABLE users (
+    id int(11) auto_increment primary key,
+    first_name varchar(50),
+    last_name varchar(50),
+    username varchar(100),
+    email varchar(100),
+	password varchar(255),
+	signup_date date,
+	profile_pic varchar(255),
+	num_posts int,
+	num_likes int,
+	user_closed varchar(3),
+	friend_array text
+);
+--------------------------------------------------------
+// (creste table )
+
+CREATE TABLE posts (
+	id int auto_increment primary key,
+	body text,
+	added_by varchar(100),
+	user_to varchar(100),
+	date_added datetime,
+	user_closed varchar(3),
+	deleted varchar(3),
+	likes int
+);
+---------------------------------------------------------
+// (create table likes)
+
+CREATE TABLE likes(
+	id int auto_increment primary key,
+	username varchar(100),
+	post_id int
+);
+-------------------------------------------------------
+// (create table comments)
+
+CREATE TABLE comments(
+	id int auto_increment primary key,
+	post_body text,
+	posted_by varchar(100),
+	posted_to varchar(100),
+	date_added datetime,
+	removed varchar(3),
+	post_id int
+);
+---------------------------------------------------------
+// (create table friend_request)
+
+CREATE TABLE friend_request(
+	id int auto_increment primary key,
+	user_to varchar(100),
+	user_from varchar(100)
+);
+-------------------------------------------------------------
+//(create message table)
+
+CREATE TABLE messages(
+	id int auto_increment primary key,
+	user_to varchar(100),
+	user_from varchar(100),
+	body text,
+	date datetime,
+	opened varchar(3),
+	viewed varchar(3),
+	deleted varchar(3)
+);
+
+------------------------------------------
+(create table notification)
+
+ create table notifications(
+    id int auto_increment primary key,
+    user_to varchar(100),
+    user_from varchar(100),
+    messages text,
+    link varchar(200),
+    datetime DATETIME,
+    opened varchar(3),
+    viewed varchar(3)
+ );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
